@@ -22,3 +22,51 @@ graphiQL ex:
     }
   }
 }
+
+----------------------------------------------------------------------------------------
+
+yarn add gatsby-transformer-remark
+yarn add gatsby-plugin-styled-components styled-components babel-plugin-styled-components
+
+----------------------------------------------------------------------------------------
+
+query MyQuery {
+  allMarkdownRemark {
+    edges {
+      node {
+        id
+        html
+        frontmatter {
+          date
+          description
+          title
+        }
+        excerpt
+      }
+    }
+  }
+}
+
+
+query MyQuery {
+  allMarkdownRemark {
+    edges {
+      node {
+        id
+        html
+        frontmatter {
+          date
+          description
+          title
+        }
+        excerpt
+        parent {
+        	id
+        }
+        fields {
+					slug
+        }
+      }
+    }
+  }
+}
